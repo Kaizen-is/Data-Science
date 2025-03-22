@@ -37,9 +37,6 @@ VALUES
 (15, 'Mia', 'Clark', '2002-02-25', 'Linguistics')
 
 
-
-
-
 create database Bookstore;
 go
 use Bookstore;
@@ -71,8 +68,6 @@ VALUES
 (13, 'Frankenstein', 'Mary Shelley', 5.99, 45),
 (14, 'Don Quixote', 'Miguel de Cervantes', 19.99, 18),
 (15, 'Dracula', 'Bram Stoker', 9.49, 60);
-
-
 
 
 create database OnlineShop;
@@ -108,8 +103,6 @@ VALUES
 (15, 'Wall Clock', 'Home', 29.99, 40);
 
 
-
-
 create database BankSystem;
 go
 use BankSystem;
@@ -141,7 +134,6 @@ VALUES
 (13, 'Kimberly Rodriguez', 1200.60, 'AUD', '2022-10-30'),
 (14, 'Liam Gonzalez', 4500.75, 'EUR', '2021-11-12'),
 (15, 'Mona Anderson', 11000.00, 'GBP', '2022-08-05');
-
 
 
 create database HospitalManagement;
@@ -176,7 +168,6 @@ VALUES
 (15, 'Nathan Green', 'Male', '1994-07-08', '777-666-5555');
 
 
-
 create database HotelBooking;
 go
 use HotelBooking;
@@ -207,7 +198,6 @@ VALUES
 (13, 'Grace', 'White', '2023-08-10', '2023-08-15'),
 (14, 'Liam', 'Harris', '2023-07-15', '2023-07-20'),
 (15, 'Charlotte', 'Clark', '2023-05-18', '2023-05-22');
-
 
 
 create database CinemaBooking;
@@ -242,7 +232,6 @@ VALUES
 (15, 'Avatar', 'Sci-Fi', 162, 7.8);   
 
 
-
 create database TravelAgency;
 go
 use TravelAgency;
@@ -275,8 +264,6 @@ VALUES
 (15, 'New Zealand', 'Auckland', 1700.00, 12);
 
 
-
-
 create database HRManagement;
 go
 use HRManagement;
@@ -307,7 +294,6 @@ VALUES
 (13, 'Ava', 'Clark', 'Content Writer', 42000),
 (14, 'Mason', 'Rodriguez', 'IT Specialist', 56000),
 (15, 'Charlotte', 'Lewis', 'Operations Manager', 69000);
-
 
 
 create database SportsClub;
