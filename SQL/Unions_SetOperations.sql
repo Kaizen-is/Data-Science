@@ -22,9 +22,7 @@ where c.PersonID is null
 select distinct p.FirstName
 from [Person].[Person] p
 inner join [Sales].[Customer] c on p.BusinessEntityID = c.PersonID
-
 intersect
-
 select distinct p.FirstName
 from [Person].[Person] p
 inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEntityID
@@ -33,9 +31,7 @@ inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEn
 select distinct p.FirstName
 from [Person].[Person] p
 inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEntityID
-
 except
-
 select distinct p.FirstName
 from [Person].[Person] p
 inner join [Sales].[Customer] c on p.BusinessEntityID = c.PersonID
@@ -44,9 +40,7 @@ inner join [Sales].[Customer] c on p.BusinessEntityID = c.PersonID
 select p.FirstName
 from [Person].[Person] p
 inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEntityID
-
 union 
-
 select p.FirstName
 from [Person].[Person] p
 inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEntityID
@@ -55,9 +49,7 @@ inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEn
 select distinct p.FirstName
 from [Person].[Person] p
 inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEntityID
-
 intersect
-
 select distinct p.FirstName
 from [Person].[Person] p
 inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEntityID
@@ -66,9 +58,7 @@ inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEn
 select p.FirstName
 from [Person].[Person] p
 inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEntityID
-
 union all
-
 select p.FirstName
 from [Person].[Person] p
 inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEntityID
@@ -79,9 +69,7 @@ inner join  [HumanResources].[Employee] he on p.BusinessEntityID = he.BusinessEn
 select p.FirstName                     
 from [Person].[Person] p
 inner join [Sales].[Customer] c on p.BusinessEntityID = c.PersonID
-
-union 
-
+union
 select p.FirstName
 From [Person].[Person] p;
 ---------------------------------------------------------------------------------------
@@ -89,9 +77,7 @@ From [Person].[Person] p;
 select p.FirstName
 from Person.Person p
 inner join Sales.Customer c on p.BusinessEntityID = c.PersonID
-
 union all
-
 select p.FirstName
 from Person.Person p
 ---------------------------------------------------------------------------------------
@@ -99,9 +85,7 @@ from Person.Person p
 select distinct p.FirstName
 from Person.Person p 
 inner join HumanResources.Employee h on p.BusinessEntityID = h.BusinessEntityID
-
 intersect
-
 select distinct p.FirstName 
 from Person.Person p
 inner join Sales.Customer s on p.BusinessEntityID = s.PersonID
@@ -110,9 +94,7 @@ inner join Sales.Customer s on p.BusinessEntityID = s.PersonID
 select distinct p.FirstName
 from Person.Person p 
 inner join HumanResources.Employee h on p.BusinessEntityID = h.BusinessEntityID
-
 except
-
 select distinct p.FirstName 
 from Person.Person p
 inner join Sales.Customer s on p.BusinessEntityID = s.PersonID
@@ -121,9 +103,7 @@ inner join Sales.Customer s on p.BusinessEntityID = s.PersonID
 select distinct p.FirstName 
 from Person.Person p
 inner join Sales.Customer s on p.BusinessEntityID = s.PersonID
-
 except
-
 select distinct p.FirstName
 from Person.Person p 
 inner join HumanResources.Employee h on p.BusinessEntityID = h.BusinessEntityID
@@ -132,14 +112,10 @@ inner join HumanResources.Employee h on p.BusinessEntityID = h.BusinessEntityID
 select p.FirstName                     
 from [Person].[Person] p
 inner join [Sales].[Customer] c on p.BusinessEntityID = c.PersonID
-
 union 
-
 select p.FirstName
 From [Person].[Person] p
-
 union
-
 select p.FirstName
 from Person.Person p
 inner join [HumanResources].[Employee] h on p.[BusinessEntityID] = h.[BusinessEntityID]
@@ -150,9 +126,7 @@ select p.FirstName
 from [Person].[Person] p
 inner join [Sales].[Customer] c on p.BusinessEntityID = c.PersonID
 where len(p.FirstName) > 5
-
 union 
-
 select p.FirstName
 from [Person].[Person] p
 inner join [Sales].[Customer] c on p.BusinessEntityID = c.PersonID
@@ -163,9 +137,7 @@ order by p.FirstName
 select distinct p.LastName
 from Person.Person p
 inner join [HumanResources].[Employee] h on p.BusinessEntityID = h.BusinessEntityID
-
 intersect
-
 select distinct p.LastName
 from Person.Person p
 inner join [Sales].[SalesPerson] s on p.BusinessEntityID = s.BusinessEntityID
@@ -174,9 +146,7 @@ inner join [Sales].[SalesPerson] s on p.BusinessEntityID = s.BusinessEntityID
 select distinct p.LastName
 from Person.Person p
 inner join [HumanResources].[Employee] h on p.BusinessEntityID = h.BusinessEntityID
-
 except
-
 select distinct p.LastName
 from Person.Person p
 inner join [Sales].[SalesPerson] s on p.BusinessEntityID = s.BusinessEntityID
@@ -199,27 +169,21 @@ where FirstName = 'John';
 --11
 select pp.Name
 from Production.Product pp
-
 union
-
 select pm.Name
 from Production.ProductModel pm
 ---------------------------------------------------------------------------------------
 --12
 select distinct pp.Name
 from Production.Product pp
-
 intersect
-
 select distinct pm.Name
 from Production.ProductModel pm
 ---------------------------------------------------------------------------------------
 --13
 select distinct pm.Name
 from Production.ProductModel pm 
-
 except  
-
 select distinct pp.Name
 from Production.Product pp
 ---------------------------------------------------------------------------------------
@@ -228,9 +192,7 @@ select p.FirstName
 from Person.Person p
 inner join [HumanResources].[Employee] h on p.BusinessEntityID = h.BusinessEntityID
 where p.FirstName like  'A%'
-
 union 
-
 select p.FirstName
 from person.Person p
 inner join Sales.Customer s on s.PersonID = p.BusinessEntityID
@@ -241,9 +203,7 @@ select distinct p.FirstName
 from Person.Person p
 inner join [HumanResources].[Employee] h on p.BusinessEntityID = h.BusinessEntityID
 where p.FirstName like  'A%'
-
 union 
-
 select distinct p.FirstName
 from person.Person p
 inner join Sales.Customer s on s.PersonID = p.BusinessEntityID
@@ -254,9 +214,7 @@ select distinct p.LastName
 from Person.Person p
 inner join [HumanResources].[Employee] h on p.BusinessEntityID = h.BusinessEntityID
 where len(p.LastName) > 6
-
 union 
-
 select distinct p.LastName
 from person.Person p
 inner join Sales.Customer s on s.PersonID = p.BusinessEntityID
@@ -267,9 +225,7 @@ select concat(p.FirstName, ' ',  p.LastName) as Name
 from person.person p
 inner join [Sales].[Customer] s on p.BusinessEntityID = s.PersonID
 where p.BusinessEntityID < 10000
-
 except
-
 select concat(p.FirstName, ' ', p.LastName) 
 from person.person p
 inner join [HumanResources].[Employee] h on p.BusinessEntityID = h.BusinessEntityID
@@ -278,10 +234,7 @@ inner join [HumanResources].[Employee] h on p.BusinessEntityID = h.BusinessEntit
 select p.FirstName, substring(p.FirstName, 1, 1) as FirstLetters
 from Person.Person p
 inner join [HumanResources].[Employee] h on p.BusinessEntityID = h.BusinessEntityID
-
-
 union 
-
 select p.FirstName,  substring(p.FirstName, 1, 1) as FirstLetters
 from person.Person p
 inner join Sales.Customer s on s.PersonID = p.BusinessEntityID
@@ -292,10 +245,7 @@ select p.FirstName, count(*) as Wieviel
 from Person.Person p
 inner join [HumanResources].[Employee] h on p.BusinessEntityID = h.BusinessEntityID
 group by p.FirstName
-
-
 union all
-
 select p.FirstName, count(*) as Wieviel
 from person.Person p
 inner join Sales.Customer s on s.PersonID = p.BusinessEntityID
@@ -306,9 +256,7 @@ Order by count(*) desc;
 select null
 from Person.Person p
 full join [HumanResources].[Employee] h on p.BusinessEntityID = h.BusinessEntityID
-
 except select null
-
 select null
 from person.Person p
 full join Sales.Customer s on s.PersonID = p.BusinessEntityID
