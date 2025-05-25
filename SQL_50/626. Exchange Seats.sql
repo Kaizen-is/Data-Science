@@ -42,67 +42,8 @@ Output:
 | 4  | Emerson |
 | 5  | Jeames  |
 +----+---------+
-
-
-
-
--- with cte as (
--- select 
--- case
---     when a.income < 20000 then 'Low Salary' else 
---     (case when a.income >= 20000 and a.income <= 50000 then 'Average Salary' else (
---         case when a.income > 50000 then 'High Salary' else '0'
---     end) end) end as category,
---     a.account_id
--- from Accounts a
-
--- )
-
--- select category     , count(account_id) as accounts_count 
--- from cte
--- group by Category
-
-
--- with cte as (    
---     select id, 
---     lag(student) over(order by id) as laged,
---     lead(dtudent) over(order by id) as leadd
--- from Seat
--- )
-
--- with cte as (
--- select id, lag(student) over(order by id) as student
--- from Seat
-
--- union 
-
--- select id, lead(student) over(order by id) as student
--- from Seat
-
--- ),
--- ranking as (
--- select id, student 
--- from cte 
--- where student is not null
--- )
-
--- select distinct id, student
--- from ranking
-
-
-
--- with cte as (
---     select id, 
---     lag(student) over(order by id) as lagged,
---     lead(student) over(order by id) as leaded
--- from Seat
--- )
-
--- select id, case 
--- when id % 2 = 0 then student = lagged else (
-    -- case when id % 2 != 0 then student = leaded else (
-    --     case when (select top 1 id from Seat order by id desc)) % 2 <> 0 then student else 0)end as student
--- from cte
+Explanation: 
+Note that if the number of students is odd, there is no need to change the last ones seat.
 
 
 
@@ -122,3 +63,8 @@ select id,
     end as student 
 from cte     
 order by id;
+
+
+with cte as (
+
+)
